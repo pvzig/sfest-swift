@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2661FF3D1966E69000041228 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2661FF3C1966E69000041228 /* MapView.swift */; };
+		26707AE51957EE6600C1A784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26707AE41957EE6600C1A784 /* AppDelegate.swift */; };
+		26707AE71957EE6600C1A784 /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26707AE61957EE6600C1A784 /* StageViewController.swift */; };
+		26707AEA1957EE6600C1A784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26707AE81957EE6600C1A784 /* Main.storyboard */; };
+		26707AEC1957EE6600C1A784 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26707AEB1957EE6600C1A784 /* Images.xcassets */; };
+		26707AF81957EE6600C1A784 /* Sfest_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26707AF71957EE6600C1A784 /* Sfest_swiftTests.swift */; };
+		26707B021958989900C1A784 /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26707B011958989900C1A784 /* DailyViewController.swift */; };
+		26A8333119881AFE00BDA023 /* BandDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8333019881AFE00BDA023 /* BandDatabase.swift */; };
+		26C4EDEC1981CD3100839720 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C4EDEB1981CD3100839720 /* MapKit.framework */; };
+		26CC90ED195DE56800C54F9C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC90EC195DE56800C54F9C /* TableViewController.swift */; };
+		26CC90EF195DE68900C54F9C /* sfdb.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 26CC90EE195DE68900C54F9C /* sfdb.sqlite3 */; };
+		26CC90F3195DE8E700C54F9C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CC90F2195DE8E700C54F9C /* libsqlite3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26707AF21957EE6600C1A784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26707AD71957EE6600C1A784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26707ADE1957EE6600C1A784;
+			remoteInfo = "Sfest-swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2661FF3C1966E69000041228 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		26707ADF1957EE6600C1A784 /* Sfest-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sfest-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26707AE31957EE6600C1A784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26707AE41957EE6600C1A784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26707AE61957EE6600C1A784 /* StageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewController.swift; sourceTree = "<group>"; };
+		26707AE91957EE6600C1A784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26707AEB1957EE6600C1A784 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		26707AF11957EE6600C1A784 /* Sfest-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sfest-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26707AF61957EE6600C1A784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26707AF71957EE6600C1A784 /* Sfest_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sfest_swiftTests.swift; sourceTree = "<group>"; };
+		26707B011958989900C1A784 /* DailyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		26A8333019881AFE00BDA023 /* BandDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandDatabase.swift; sourceTree = "<group>"; };
+		26C4EDEB1981CD3100839720 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		26CC90EC195DE56800C54F9C /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		26CC90EE195DE68900C54F9C /* sfdb.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfdb.sqlite3; sourceTree = "<group>"; };
+		26CC90F2195DE8E700C54F9C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		26CC90F5195DEA5200C54F9C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26707ADC1957EE6600C1A784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C4EDEC1981CD3100839720 /* MapKit.framework in Frameworks */,
+				26CC90F3195DE8E700C54F9C /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26707AEE1957EE6600C1A784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26707AD61957EE6600C1A784 = {
+			isa = PBXGroup;
+			children = (
+				26CC90F2195DE8E700C54F9C /* libsqlite3.dylib */,
+				26C4EDEB1981CD3100839720 /* MapKit.framework */,
+				26707AE11957EE6600C1A784 /* Sfest-swift */,
+				26707AF41957EE6600C1A784 /* Sfest-swiftTests */,
+				26707AE01957EE6600C1A784 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26707AE01957EE6600C1A784 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26707ADF1957EE6600C1A784 /* Sfest-swift.app */,
+				26707AF11957EE6600C1A784 /* Sfest-swiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26707AE11957EE6600C1A784 /* Sfest-swift */ = {
+			isa = PBXGroup;
+			children = (
+				26CC90F5195DEA5200C54F9C /* Bridging-Header.h */,
+				26707AE41957EE6600C1A784 /* AppDelegate.swift */,
+				26707AE61957EE6600C1A784 /* StageViewController.swift */,
+				26707B011958989900C1A784 /* DailyViewController.swift */,
+				26CC90EC195DE56800C54F9C /* TableViewController.swift */,
+				2661FF3C1966E69000041228 /* MapView.swift */,
+				26A8333019881AFE00BDA023 /* BandDatabase.swift */,
+				26707AE81957EE6600C1A784 /* Main.storyboard */,
+				26707AEB1957EE6600C1A784 /* Images.xcassets */,
+				26707AE21957EE6600C1A784 /* Supporting Files */,
+			);
+			path = "Sfest-swift";
+			sourceTree = "<group>";
+		};
+		26707AE21957EE6600C1A784 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26CC90EE195DE68900C54F9C /* sfdb.sqlite3 */,
+				26707AE31957EE6600C1A784 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26707AF41957EE6600C1A784 /* Sfest-swiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				26707AF71957EE6600C1A784 /* Sfest_swiftTests.swift */,
+				26707AF51957EE6600C1A784 /* Supporting Files */,
+			);
+			path = "Sfest-swiftTests";
+			sourceTree = "<group>";
+		};
+		26707AF51957EE6600C1A784 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26707AF61957EE6600C1A784 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26707ADE1957EE6600C1A784 /* Sfest-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26707AFB1957EE6600C1A784 /* Build configuration list for PBXNativeTarget "Sfest-swift" */;
+			buildPhases = (
+				26707ADB1957EE6600C1A784 /* Sources */,
+				26707ADC1957EE6600C1A784 /* Frameworks */,
+				26707ADD1957EE6600C1A784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sfest-swift";
+			productName = "Sfest-swift";
+			productReference = 26707ADF1957EE6600C1A784 /* Sfest-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26707AF01957EE6600C1A784 /* Sfest-swiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26707AFE1957EE6600C1A784 /* Build configuration list for PBXNativeTarget "Sfest-swiftTests" */;
+			buildPhases = (
+				26707AED1957EE6600C1A784 /* Sources */,
+				26707AEE1957EE6600C1A784 /* Frameworks */,
+				26707AEF1957EE6600C1A784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26707AF31957EE6600C1A784 /* PBXTargetDependency */,
+			);
+			name = "Sfest-swiftTests";
+			productName = "Sfest-swiftTests";
+			productReference = 26707AF11957EE6600C1A784 /* Sfest-swiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26707AD71957EE6600C1A784 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Launch Software";
+				TargetAttributes = {
+					26707ADE1957EE6600C1A784 = {
+						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					26707AF01957EE6600C1A784 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 26707ADE1957EE6600C1A784;
+					};
+				};
+			};
+			buildConfigurationList = 26707ADA1957EE6600C1A784 /* Build configuration list for PBXProject "Sfest-swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26707AD61957EE6600C1A784;
+			productRefGroup = 26707AE01957EE6600C1A784 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26707ADE1957EE6600C1A784 /* Sfest-swift */,
+				26707AF01957EE6600C1A784 /* Sfest-swiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26707ADD1957EE6600C1A784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26707AEA1957EE6600C1A784 /* Main.storyboard in Resources */,
+				26707AEC1957EE6600C1A784 /* Images.xcassets in Resources */,
+				26CC90EF195DE68900C54F9C /* sfdb.sqlite3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26707AEF1957EE6600C1A784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26707ADB1957EE6600C1A784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26707AE71957EE6600C1A784 /* StageViewController.swift in Sources */,
+				2661FF3D1966E69000041228 /* MapView.swift in Sources */,
+				26707B021958989900C1A784 /* DailyViewController.swift in Sources */,
+				26A8333119881AFE00BDA023 /* BandDatabase.swift in Sources */,
+				26707AE51957EE6600C1A784 /* AppDelegate.swift in Sources */,
+				26CC90ED195DE56800C54F9C /* TableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26707AED1957EE6600C1A784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26707AF81957EE6600C1A784 /* Sfest_swiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26707AF31957EE6600C1A784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26707ADE1957EE6600C1A784 /* Sfest-swift */;
+			targetProxy = 26707AF21957EE6600C1A784 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26707AE81957EE6600C1A784 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26707AE91957EE6600C1A784 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26707AF91957EE6600C1A784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26707AFA1957EE6600C1A784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26707AFC1957EE6600C1A784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Sfest-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		26707AFD1957EE6600C1A784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Sfest-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Bridging-Header.h";
+			};
+			name = Release;
+		};
+		26707AFF1957EE6600C1A784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sfest-swift.app/Sfest-swift";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sfest-swiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		26707B001957EE6600C1A784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sfest-swift.app/Sfest-swift";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sfest-swiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26707ADA1957EE6600C1A784 /* Build configuration list for PBXProject "Sfest-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26707AF91957EE6600C1A784 /* Debug */,
+				26707AFA1957EE6600C1A784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26707AFB1957EE6600C1A784 /* Build configuration list for PBXNativeTarget "Sfest-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26707AFC1957EE6600C1A784 /* Debug */,
+				26707AFD1957EE6600C1A784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26707AFE1957EE6600C1A784 /* Build configuration list for PBXNativeTarget "Sfest-swiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26707AFF1957EE6600C1A784 /* Debug */,
+				26707B001957EE6600C1A784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26707AD71957EE6600C1A784 /* Project object */;
+}
