@@ -109,10 +109,9 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
                     finished in
                     animateView.removeFromSuperview()
                     backgroundImageView.removeFromSuperview()
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let stageViewController = storyboard.instantiateViewControllerWithIdentifier("svc") as StageViewController
+                    let stageViewController = self.navigationController.viewControllers[0] as StageViewController
                     stageViewController.savedScrollPosition = self.savedScrollPosition!
-                    self.navigationController.pushViewController(stageViewController, animated: false)
+                    self.navigationController.popToRootViewControllerAnimated(false)
                 })
         }
     }
