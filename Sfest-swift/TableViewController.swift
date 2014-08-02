@@ -17,6 +17,7 @@ class TableViewController:UITableViewController, UITableViewDelegate, UITableVie
         edgesForExtendedLayout = UIRectEdge.None
         view.frame = CGRect(x: 0, y: 90, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height-90)
         tableView.separatorColor = complimentaryColor
+        db.open()
         data = bandsPlayingStage(stage: stage, date: date)
     }
     
