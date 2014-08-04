@@ -32,7 +32,7 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
     var tableViewController: TableViewController?
     var mapView: MapView?
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
     }
     
@@ -194,7 +194,7 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func showMapView(sender:UIButton) {
         mapView = MapView(stage: stageName!)
-        self.view.addSubview(mapView)
+        self.view.addSubview(mapView!)
         view.bringSubviewToFront(closeButton)
         mapView!.frame = CGRect(x: 0, y: UIScreen.mainScreen().bounds.size.height, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height-45)
         UIView.animateWithDuration(0.5, delay: 0.00, usingSpringWithDamping: 0.5, initialSpringVelocity: 1.00, options: UIViewAnimationOptions.CurveEaseOut, animations:{
