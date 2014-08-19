@@ -20,7 +20,7 @@ class BandDatabase {
     
     func open() {
         let location = NSBundle.mainBundle().pathForResource("sfdb", ofType: "sqlite3")
-        let path = location.cStringUsingEncoding(NSUTF8StringEncoding)
+        let path = location?.cStringUsingEncoding(NSUTF8StringEncoding)
         let code = sqlite3_open(path!, &handle)
     }
     

@@ -32,7 +32,7 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
     var tableViewController: TableViewController?
     var mapView: MapView?
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
