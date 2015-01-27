@@ -85,7 +85,7 @@ class MapPoint: NSObject, MKAnnotation {
     }
     
     func mapItem() -> MKMapItem {
-        let addressDictionary = [kABPersonAddressStreetKey : ""]
+        let addressDictionary = [kABPersonAddressStreetKey as String : ""]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = title

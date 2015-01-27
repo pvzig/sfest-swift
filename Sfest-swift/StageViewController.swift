@@ -17,22 +17,22 @@ class StageViewController: UICollectionViewController, UICollectionViewDelegate,
     }
     
     override func viewDidAppear(animated: Bool) {
-        collectionView.contentOffset = savedScrollPosition
+        collectionView?.contentOffset = savedScrollPosition
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
             return UIStatusBarStyle.LightContent
     }
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
     }
     
-    override func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stage", forIndexPath: indexPath) as UICollectionViewCell
         let stageLabel = cell.viewWithTag(1) as UILabel
         stageLabel.text = stageTupleAtIndex(indexPath).stageName
@@ -41,8 +41,8 @@ class StageViewController: UICollectionViewController, UICollectionViewDelegate,
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
-        let rect = collectionView.cellForItemAtIndexPath(indexPath).frame
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let rect = collectionView.cellForItemAtIndexPath(indexPath)!.frame
         let animateView = UIView(frame: CGRect(x: rect.origin.x, y: rect.origin.y - collectionView.contentOffset.y, width: rect.size.width, height: rect.size.height))
         animateView.backgroundColor = stageTupleAtIndex(indexPath).color
         let animateLabel = UILabel(frame: CGRect(x: 0.0, y:0.0, width: 320, height:160))
@@ -67,12 +67,12 @@ class StageViewController: UICollectionViewController, UICollectionViewDelegate,
                 dailyViewController.backgroundImage = self.backgroundImage()
                 dailyViewController.selectedIndex = indexPath
                 dailyViewController.savedScrollPosition = collectionView.contentOffset
-                let rect = collectionView.cellForItemAtIndexPath(indexPath).frame
+                let rect = collectionView.cellForItemAtIndexPath(indexPath)!.frame
                 dailyViewController.returnRectangle = CGRect(x: rect.origin.x, y: rect.origin.y - collectionView.contentOffset.y, width: rect.size.width, height: rect.size.height)
                 dailyViewController.stageName = animateLabel.text
                 dailyViewController.stageColor = animateView.backgroundColor
                 dailyViewController.complimentaryColor = self.complimentaryColor(indexPath)
-                self.navigationController.pushViewController(dailyViewController, animated: false)
+                self.navigationController!.pushViewController(dailyViewController, animated: false)
             })
     }
     

@@ -38,7 +38,7 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        globalDate = dateTest(NSDate.date())
+        globalDate = dateTest(NSDate())
         setupViews()
         gestureRecognizers()
     }
@@ -73,7 +73,7 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
         
         //TableView Subview
         tableViewController = TableViewController(stage: stageName!, date: convertDateToStrings(globalDate!).queryDateString, complimentaryColor: complimentaryColor!)
-        self.addChildViewController(tableViewController)
+        self.addChildViewController(tableViewController!)
         self.view.addSubview(tableViewController!.view)
         tableViewController!.didMoveToParentViewController(self)
         
@@ -109,9 +109,9 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
                     finished in
                     animateView.removeFromSuperview()
                     backgroundImageView.removeFromSuperview()
-                    let stageViewController = self.navigationController.viewControllers[0] as StageViewController
+                    let stageViewController = self.navigationController!.viewControllers[0] as StageViewController
                     stageViewController.savedScrollPosition = self.savedScrollPosition!
-                    self.navigationController.popToRootViewControllerAnimated(false)
+                    self.navigationController!.popToRootViewControllerAnimated(false)
                 })
         }
     }
@@ -135,13 +135,13 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
         dateComponents.month = 7
         dateComponents.day = 7
         let endDate = dateComponents.date
-        let startDateComparisonResult = aDate.compare(startDate)
-        let endDateComparisonResult = aDate.compare(endDate)
+        let startDateComparisonResult = aDate.compare(startDate!)
+        let endDateComparisonResult = aDate.compare(endDate!)
         if (startDateComparisonResult == NSComparisonResult.OrderedAscending){
-            return startDate
+            return startDate!
         }
         else if (endDateComparisonResult == NSComparisonResult.OrderedDescending){
-            return endDate
+            return endDate!
         }
         else {
             return aDate
