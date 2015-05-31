@@ -33,8 +33,8 @@ class StageViewController: UICollectionViewController, UICollectionViewDelegate,
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stage", forIndexPath: indexPath) as UICollectionViewCell
-        let stageLabel = cell.viewWithTag(1) as UILabel
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stage", forIndexPath: indexPath) as! UICollectionViewCell
+        let stageLabel = cell.viewWithTag(1) as! UILabel
         stageLabel.text = stageTupleAtIndex(indexPath).stageName
         cell.backgroundColor = stageTupleAtIndex(indexPath).color
         cell.addSubview(stageLabel)
@@ -63,7 +63,7 @@ class StageViewController: UICollectionViewController, UICollectionViewDelegate,
                 finished in
                 animateView.removeFromSuperview()
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let dailyViewController = storyboard.instantiateViewControllerWithIdentifier("dvc") as DailyViewController
+                let dailyViewController = storyboard.instantiateViewControllerWithIdentifier("dvc") as! DailyViewController
                 dailyViewController.backgroundImage = self.backgroundImage()
                 dailyViewController.selectedIndex = indexPath
                 dailyViewController.savedScrollPosition = collectionView.contentOffset
