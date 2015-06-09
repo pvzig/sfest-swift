@@ -21,7 +21,7 @@ class BandDatabase {
     func open() {
         let location = NSBundle.mainBundle().pathForResource("sfdb", ofType: "sqlite3")
         let path = location?.cStringUsingEncoding(NSUTF8StringEncoding)
-        let code = sqlite3_open(path!, &handle)
+        sqlite3_open(path!, &handle)
     }
     
     func bandsPlayingAtStage(stage:String, date:String) -> [(band:String, time:String)] {
@@ -35,7 +35,7 @@ class BandDatabase {
         result = sqlite3_prepare_v2(handle, cString!, -1, &statement, nil)
         if (result != SQLITE_OK) {
             sqlite3_finalize(statement)
-            println("Error")
+            print("Error")
         }
         
         while (sqlite3_step(statement) == SQLITE_ROW) {

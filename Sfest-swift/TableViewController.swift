@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewController:UITableViewController, UITableViewDelegate, UITableViewDataSource, DateChangedDelegate {
+class TableViewController:UITableViewController, DateChangedDelegate {
         
     var data:Array<(band:String, time:String)> = []
     let db = BandDatabase.sharedInstance
@@ -69,7 +69,7 @@ class TableViewController:UITableViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    func bandsPlayingStage(#stage:String, date:String) -> Array<(band:String, time:String)> {
+    func bandsPlayingStage(stage stage:String, date:String) -> Array<(band:String, time:String)> {
         return db.bandsPlayingAtStage(stage, date:date)
     }
     

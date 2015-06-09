@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StageViewController: UICollectionViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class StageViewController: UICollectionViewController {
     
     var savedScrollPosition: CGPoint = CGPoint(x: 0, y: 0)
     
@@ -33,7 +33,7 @@ class StageViewController: UICollectionViewController, UICollectionViewDelegate,
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stage", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stage", forIndexPath: indexPath) as UICollectionViewCell
         let stageLabel = cell.viewWithTag(1) as! UILabel
         stageLabel.text = stageTupleAtIndex(indexPath).stageName
         cell.backgroundColor = stageTupleAtIndex(indexPath).color
