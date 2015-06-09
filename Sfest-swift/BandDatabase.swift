@@ -39,14 +39,9 @@ class BandDatabase {
         }
         
         while (sqlite3_step(statement) == SQLITE_ROW) {
-            let uniqueID = sqlite3_column_int(statement, 0)
-            let dateCharacters = UnsafePointer<Int8> (sqlite3_column_text(statement, 1))
             let timeCharacters = UnsafePointer<Int8> (sqlite3_column_text(statement, 2))
-            let stageCharacters = UnsafePointer<Int8> (sqlite3_column_text(statement, 3))
             let bandCharacters = UnsafePointer<Int8> (sqlite3_column_text(statement, 4))
-            let date = String.fromCString(dateCharacters)
             let time = String.fromCString(timeCharacters)
-            let stage = String.fromCString(stageCharacters)
             let band = String.fromCString(bandCharacters)
             let tuple = (band:band!, time:time!)
             results.append(tuple)

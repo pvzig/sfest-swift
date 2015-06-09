@@ -45,8 +45,8 @@ class TableViewController:UITableViewController, DateChangedDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        var bandLabel = UILabel(frame: CGRect(x: 6, y: 11, width: 220, height: 26))
-        var timeLabel = UILabel(frame: CGRect(x: 235, y: 11, width: 80, height: 26))
+        let bandLabel = UILabel(frame: CGRect(x: 6, y: 11, width: 220, height: 26))
+        let timeLabel = UILabel(frame: CGRect(x: 235, y: 11, width: 80, height: 26))
         
         bandLabel.font = UIFont(name: "Futura", size: 18.0)
         bandLabel.adjustsFontSizeToFitWidth = true
