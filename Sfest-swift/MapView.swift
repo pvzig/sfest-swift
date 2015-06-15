@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-import AddressBook
+import Contacts
 
 class MapView: MKMapView, CLLocationManagerDelegate {
     
@@ -85,7 +85,7 @@ class MapPoint: NSObject, MKAnnotation {
     }
     
     func mapItem() -> MKMapItem {
-        let addressDictionary = [kABPersonAddressStreetKey as String : ""]
+        let addressDictionary = [CNContactPostalAddressesKey as String : ""]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = title

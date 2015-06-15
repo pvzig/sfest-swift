@@ -7,23 +7,25 @@
 
 import UIKit
 
-class TableViewController:UITableViewController, DateChangedDelegate {
-        
-    var data:Array<(band:String, time:String)> = []
-    let db = BandDatabase.sharedInstance
+class ShowTableViewCell: UITableViewCell {
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var bandLabel: UILabel!
+}
 
-    convenience init(stage:String, date:String, complimentaryColor:UIColor) {
-        self.init(style:UITableViewStyle.Plain)
-        edgesForExtendedLayout = UIRectEdge.None
-        view.frame = CGRect(x: 0, y: 90, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height-90)
-        tableView.separatorColor = complimentaryColor
+class TableViewController:UITableViewController, DateChangedDelegate {
+    
+    var data: Array<(band:String, time:String)> = []
+    let db = BandDatabase.sharedInstance
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         db.open()
-        data = bandsPlayingStage(stage: stage, date: date)
     }
     
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorColor = NSUserDefaults.standardUserDefaults().colorForKey("complimentaryColor")
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -44,26 +46,15 @@ class TableViewController:UITableViewController, DateChangedDelegate {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let bandLabel = UILabel(frame: CGRect(x: 6, y: 11, width: 220, height: 26))
-        let timeLabel = UILabel(frame: CGRect(x: 235, y: 11, width: 80, height: 26))
-        
-        bandLabel.font = UIFont(name: "Futura", size: 18.0)
-        bandLabel.adjustsFontSizeToFitWidth = true
-        bandLabel.numberOfLines = 0
-        timeLabel.font = UIFont(name: "Futura", size: 18.0)
-        timeLabel.textAlignment = NSTextAlignment.Right
-        
-        cell.addSubview(timeLabel)
-        cell.addSubview(bandLabel)
+        let cell = tableView.dequeueReusableCellWithIdentifier("bands", forIndexPath: indexPath) as! ShowTableViewCell
         
         if (data.count > 0) {
-        bandLabel.text = data[indexPath.row].band
-        timeLabel.text = data[indexPath.row].time
+            cell.bandLabel.text = data[indexPath.row].band
+            cell.timeLabel.text = data[indexPath.row].time
         }
-        
-        if (data.count == 0) {
-            bandLabel.text = "Sorry, no bands playing here tonight."
+        else {
+            cell.bandLabel.text = "Sorry, no bands playing here tonight."
+            cell.timeLabel.text = ""
         }
 
         return cell

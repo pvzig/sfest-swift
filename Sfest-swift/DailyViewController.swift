@@ -26,21 +26,19 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
     var selectedIndex: NSIndexPath?
     var stageName: String?
     var stageColor: UIColor?
-    var complimentaryColor: UIColor?
     var globalDate : NSDate?
     var delegate: DateChangedDelegate?
     var tableViewController: TableViewController?
     var mapView: MapView?
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         globalDate = dateTest(NSDate())
         setupViews()
         gestureRecognizers()
+        tableViewController = childViewControllers[0] as? TableViewController
+        self.delegate = tableViewController
+        delegate?.dateChanged(stageName!, date: convertDateToStrings(globalDate!).queryDateString)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -52,7 +50,7 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
             }, completion: {
                 finished in
                 animateView.removeFromSuperview()
-                })
+            })
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -61,21 +59,13 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func setupViews() {
         //Stage
-        stageView.backgroundColor = stageColor!
-        stageNameLabel.text = stageName!
-        if (stageNameLabel.text == "Johnson Controls World Sound Stage") {
-            stageNameLabel.font = UIFont(name: "Futura", size: 16)
-        }
+        stageView.backgroundColor = stageColor
+        stageNameLabel.text = stageName
+
         //Date
         dayOfTheWeekLabel!.text = convertDateToStrings(globalDate!).dayOfTheWeek
         dateLabel!.text = convertDateToStrings(globalDate!).longDateString
-        dateView.backgroundColor = complimentaryColor!
-        
-        //TableView Subview
-        tableViewController = TableViewController(stage: stageName!, date: convertDateToStrings(globalDate!).queryDateString, complimentaryColor: complimentaryColor!)
-        self.addChildViewController(tableViewController!)
-        self.view.addSubview(tableViewController!.view)
-        tableViewController!.didMoveToParentViewController(self)
+        dateView.backgroundColor = NSUserDefaults.standardUserDefaults().colorForKey("complimentaryColor")
         
         //Close Button
         view.bringSubviewToFront(closeButton)
@@ -93,26 +83,11 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func close() {
-        if (mapView?.frame.origin.y == 45){
+        if (mapView?.frame.origin.y == 45) {
             hideMapView(closeButton)
         }
         else {
-            let backgroundImageView:UIImageView = UIImageView(image: backgroundImage!)
-            view.addSubview(backgroundImageView)
-            let animateView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height))
-            animateView.backgroundColor = stageColor!
-            view.addSubview(animateView)
-            UIView.animateWithDuration(0.5, animations: {
-                animateView.frame = self.returnRectangle!
-                animateView.alpha = 0.5
-                }, completion: {
-                    finished in
-                    animateView.removeFromSuperview()
-                    backgroundImageView.removeFromSuperview()
-                    let stageViewController = self.navigationController!.viewControllers[0] as! StageViewController
-                    stageViewController.savedScrollPosition = self.savedScrollPosition!
-                    self.navigationController!.popToRootViewControllerAnimated(false)
-                })
+            popToStageViewController()
         }
     }
     
@@ -124,6 +99,25 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
         close()
     }
     
+    func popToStageViewController() {
+        let backgroundImageView:UIImageView = UIImageView(image: backgroundImage!)
+        view.addSubview(backgroundImageView)
+        let animateView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height))
+        animateView.backgroundColor = stageColor
+        view.addSubview(animateView)
+        UIView.animateWithDuration(0.5, animations: {
+            animateView.frame = self.returnRectangle!
+            animateView.alpha = 0.5
+            }, completion: {
+                finished in
+                animateView.removeFromSuperview()
+                backgroundImageView.removeFromSuperview()
+                let stageViewController = self.navigationController!.viewControllers[0] as! StageViewController
+                stageViewController.savedScrollPosition = self.savedScrollPosition!
+                self.navigationController!.popToRootViewControllerAnimated(false)
+        })
+    }
+
     func dateTest(aDate:NSDate) -> NSDate {
         let dateComponents = NSDateComponents()
         dateComponents.calendar = NSCalendar.currentCalendar()
@@ -156,7 +150,6 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
         globalDate = dateTest(globalDate!.dateByAddingTimeInterval(24*60*60))
         dayOfTheWeekLabel!.text = convertDateToStrings(globalDate!).dayOfTheWeek
         dateLabel!.text = convertDateToStrings(globalDate!).longDateString
-        self.delegate = tableViewController
         delegate?.dateChanged(stageName!, date: convertDateToStrings(globalDate!).queryDateString)
     }
     
@@ -168,11 +161,10 @@ class DailyViewController: UIViewController, UIGestureRecognizerDelegate {
         globalDate = dateTest(globalDate!.dateByAddingTimeInterval(-24*60*60))
         dayOfTheWeekLabel!.text = convertDateToStrings(globalDate!).dayOfTheWeek
         dateLabel!.text = convertDateToStrings(globalDate!).longDateString
-        self.delegate = tableViewController
         delegate?.dateChanged(stageName!, date: convertDateToStrings(globalDate!).queryDateString)
     }
     
-    func convertDateToStrings(date:NSDate)-> (queryDateString:String, longDateString:String, dayOfTheWeek:String) {
+    func convertDateToStrings(date:NSDate) -> (queryDateString:String, longDateString:String, dayOfTheWeek:String) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yyyy"
         let queryString = dateFormatter.stringFromDate(date)
